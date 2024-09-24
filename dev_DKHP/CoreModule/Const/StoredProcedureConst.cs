@@ -12,6 +12,6 @@
         public const string CLASS_BY_ID = "CLASS_BY_ID"; // DONE
         public const string CLASS_SEARCH = "CLASS_SEARCH"; // DONE
         public const string ENROLLED_STUDENT_INS = "ENROLLED_STUDENT_INS"; // DONE
-
+        public const string CLASS_INS = "CLASS_INS"; // DONE
     }
 }

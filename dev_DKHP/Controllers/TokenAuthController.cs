@@ -127,7 +127,7 @@ namespace dev_DKHP.Controllers
             };
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         [HttpPost]
         public async Task<CommonReturnDto> CreateUserAsync([FromBody] TL_USER_ENTITY user)
         {

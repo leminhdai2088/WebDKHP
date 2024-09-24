@@ -43,7 +43,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigin",
            builder =>
            {
-               builder.WithOrigins("http://localhost:4000", "http://localhost:3000")
+               builder.WithOrigins("http://localhost:4200")
                       .AllowAnyHeader()
                       .AllowAnyMethod();
            });
@@ -133,6 +133,7 @@ builder.Services.AddScoped<IAuthenticationAppService, AuthenticationAppService>(
 builder.Services.AddScoped<IEmailAppService, EmailAppService>();
 builder.Services.AddScoped<IBaseAppService, BaseAppService>();
 builder.Services.AddScoped<IMakerAppService, MakerAppService>();
+builder.Services.AddScoped<ICheckerAppService, CheckerAppService>();
 builder.Services.AddScoped<IClassSubjectAppService, ClassSubjectAppService>();
 builder.Services.AddScoped<IStoredProcedureProvider, StoredProcedureProvider>();
 

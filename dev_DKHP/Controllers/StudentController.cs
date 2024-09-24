@@ -40,7 +40,7 @@ using Microsoft.AspNetCore.Mvc;
 */
 namespace dev_DKHP.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Student")]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class StudentController : ControllerBase
@@ -53,9 +53,9 @@ namespace dev_DKHP.Controllers
         }
 
         [HttpPost]
-        public async Task<List<object>> TestApi()
+        public string TestApi()
         {
-            return await _studentAppService.TestApi();
+            return _studentAppService.TestApi();
         }
 
         [HttpPost]

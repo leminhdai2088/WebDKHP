@@ -24,14 +24,9 @@ namespace dev_DKHP.Impls
             _storedProcedureProvider = storedProcedureProvider;
             _baseAppService = baseAppService;
         }
-        public async Task<List<object>> TestApi()
+        public string TestApi()
         {
-            string queryString = "select PARAMETER_NAME, PARAMETER_MODE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH from information_schema.parameters where specific_name = @storeProcName";
-            using (var conn = new SqlConnection(ConnectionString))
-            {
-                var result = await conn.QueryAsync<object>(queryString, new { storeProcName = "ProcTest" });
-                return result.ToList();
-            }
+            return "OKKKKKKKKKKKKKKKKK";
         }
 
         public async Task<List<ENROLLED_STUDENT_ENTITY>> ENROLLED_STUDENT_SEARCH(ENROLLED_STUDENT_ENTITY finterInput)

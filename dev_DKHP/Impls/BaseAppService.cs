@@ -21,14 +21,14 @@ namespace dev_DKHP.Impls
             _userManager = userManager;
             _httpContextAccessor = httpContextAccessor;
         }
-        public async Task<TL_USER_ENTITY> GetCurrentUserAsync()
+        public async Task<TL_USER_ENTITY?> GetCurrentUserAsync()
         {
             var user = await _userManager.FindByIdAsync(_httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier));
-            if (user == null) throw new CustomException(-1, "There is no current user!");
+            if (user == null) return null;
             return user;
         }
 
-        public string GetCurrentUserName()
+        public string? GetCurrentUserName()
         {
             return _httpContextAccessor.HttpContext?.User?.Identity?.Name;
         }
